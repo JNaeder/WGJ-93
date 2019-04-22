@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5537595881422512911
+--- !u!1 &3828945408327472829
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1542420010599322391}
-  - component: {fileID: 6707187897752942061}
-  - component: {fileID: 8946102191598270131}
-  - component: {fileID: 7732253366917277192}
+  - component: {fileID: 7299525251328539543}
+  - component: {fileID: 1030546997115428674}
+  - component: {fileID: 3086642957323243876}
+  - component: {fileID: 175439397885485417}
   m_Layer: 0
-  m_Name: Item (4)
+  m_Name: Gnome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1542420010599322391
+--- !u!4 &7299525251328539543
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537595881422512911}
+  m_GameObject: {fileID: 3828945408327472829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.76, y: 3.34, z: 0}
+  m_LocalPosition: {x: -7.39, y: 3.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6707187897752942061
+--- !u!212 &1030546997115428674
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537595881422512911}
+  m_GameObject: {fileID: 3828945408327472829}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2828f882b3eefbf46937e071b0c1ac44, type: 3}
-  m_Color: {r: 0.5840762, g: 0.019607842, b: 0.7647059, a: 1}
+  m_Sprite: {fileID: 21300042, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -81,13 +81,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8946102191598270131
+--- !u!60 &3086642957323243876
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537595881422512911}
+  m_GameObject: {fileID: 3828945408327472829}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -98,7 +98,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.66999996, y: 0.9}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -106,16 +106,29 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5}
-      - {x: -0.4330127, y: -0.25000003}
-      - {x: 0.43301272, y: -0.24999996}
---- !u!114 &7732253366917277192
+    - - {x: 0.30648467, y: 0.17109153}
+      - {x: 0.27272, y: 0.33991477}
+      - {x: 0.103896774, y: 0.4412087}
+      - {x: -0.09869111, y: 0.4412087}
+      - {x: -0.109946, y: 0.4299538}
+      - {x: -0.25625947, y: 0.26113057}
+      - {x: -0.301279, y: 0.092307344}
+      - {x: -0.33504364, y: -0.06526101}
+      - {x: -0.33504364, y: -0.31286842}
+      - {x: -0.27876922, y: -0.36914283}
+      - {x: -0.21123993, y: -0.4029075}
+      - {x: -0.09869111, y: -0.42541724}
+      - {x: 0.17142607, y: -0.42541724}
+      - {x: 0.2839749, y: -0.4029075}
+      - {x: 0.31773955, y: -0.35788795}
+      - {x: 0.31773955, y: 0.01352317}
+--- !u!114 &175439397885485417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537595881422512911}
+  m_GameObject: {fileID: 3828945408327472829}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb2928e19d5c96f4bbc880669f1e9d8b, type: 3}
@@ -125,14 +138,18 @@ MonoBehaviour:
   dialog:
   - name: Yellow Guy
     sentences:
-    - oooohhhhhhhhhhhhh
-    - Do you like this?
-    - I think it would go well with the other stuff you have
+    - Is this supposed to be a stop sign?
     characterSprite: {fileID: 21300000, guid: a0d731c39e5cce749a3f60cbfcb93a6a, type: 3}
     characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
   - name: Purple Guy
     sentences:
-    - What other stuff?
+    - Maybe it's rusted and dangerous.
+    - Let's use it anyway.
     characterSprite: {fileID: 21300000, guid: a0d731c39e5cce749a3f60cbfcb93a6a, type: 3}
     characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
+  - name: Yellow Guy
+    sentences:
+    - Great Idea!
+    characterSprite: {fileID: 21300000, guid: a0d731c39e5cce749a3f60cbfcb93a6a, type: 3}
+    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
   isCollectable: 1

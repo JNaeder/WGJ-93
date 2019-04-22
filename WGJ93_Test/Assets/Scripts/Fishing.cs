@@ -95,7 +95,7 @@ public class Fishing : MonoBehaviour
         isFishing = true;
         pressedTime = Time.time;
         uiBarDelay = Random.Range(1.0f, 7.0f);
-        Debug.Log(distAway);
+        //Debug.Log(distAway);
         if (distAway < 0.5f)
         {
             //Slow
@@ -138,7 +138,7 @@ public class Fishing : MonoBehaviour
         isFishing = true;
         yield return new WaitForSeconds(Random.Range(3.0f, 6.0f));
         isFishing = false;
-        Debug.Log("Fake fishing!");
+       //Debug.Log("Fake fishing!");
         dialogBarUI.SetActive(true);
         DM.StartDialog(catchNothingDialog, catchNothingDialog.Length);
         //EndFishing();
@@ -156,7 +156,8 @@ public class Fishing : MonoBehaviour
             mainGuy.currentUWItem = null;
         }
 
-        if (collGM.collectedItems.Count == 5) {
+        //WIN!!!
+        if (collGM.collectedItems.Count == 6) {
             dialogBarUI.SetActive(true);
             dialogText.text = "You Win!";
         }

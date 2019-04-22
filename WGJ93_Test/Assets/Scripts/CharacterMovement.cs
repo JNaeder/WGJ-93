@@ -75,7 +75,7 @@ public class CharacterMovement : MonoBehaviour
         }
         else {
             gM.FakeFishing();
-            Debug.Log("Fake fishing!");
+            //Debug.Log("Fake fishing!");
 
         }
 
@@ -109,12 +109,20 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        currentUWItem = collision.gameObject.GetComponent<UnderWaterItem>();
+        if (collision.gameObject.tag == "UnderwaterItem")
+        {
+            currentUWItem = collision.gameObject.GetComponent<UnderWaterItem>();
+            //Debug.Log("Something Here!");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        currentUWItem = null;
+        if (collision.gameObject.tag == "UnderwaterItem")
+        {
+            currentUWItem = null;
+            //Debug.Log("Leaving");
+        }
     }
 
 

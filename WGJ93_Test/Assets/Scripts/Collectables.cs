@@ -53,7 +53,7 @@ public class Collectables : MonoBehaviour
     public GameObject GetRandomItem() {
         int randNum = Random.Range(0, possibleItems.Length);
         for(int i = 0; i < randNumList.Count; i++) {
-            if (randNum == randNumList[i] && randNumList.Count != 5) {
+            if (randNum == randNumList[i] && randNumList.Count != 6) {
                // Debug.Log("repeat!");
                 GetRandomItem();
                 return null;
