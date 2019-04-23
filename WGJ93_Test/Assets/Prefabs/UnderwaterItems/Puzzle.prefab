@@ -169,17 +169,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPickedPos: {fileID: 0}
   dialog:
-  - name: Yellow Guy
+  - name: Wendy
     sentences:
-    - Wow!!!!
-    - Green! and a diamond!
-    - Can we use this for something?
-    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
-  - name: Purple Guy
-    sentences:
-    - Oh! Super cool!
-    - We could use it for placeholder dialog!
+    - The missing piece!
     characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
+    dialogSound: event:/Dialog_Wendy
+  - name: Miko
+    sentences:
+    - I bet it fits perfectly!
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
+    sentences:
+    - I do love puzzles!
+    - "We\u2019re really puzzling this together Miku."
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Wendy
   isCollectable: 1

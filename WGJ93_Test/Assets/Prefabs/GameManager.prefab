@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2323482916453304332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2323482916453304330}
+  - component: {fileID: 2323482916453304331}
+  - component: {fileID: 2323482916453304329}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2323482916453304330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323482916453304332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2323482916453304331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323482916453304332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e350b49b9ce3cc840804f98259efc034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFishing: 0
+  isDrivingBoat: 0
+  fishingBarSpeed: 1000
+  greenBarAreaSize: 30
+  fishigUIBar: {fileID: 0}
+  dialogBarUI: {fileID: 0}
+  dialogText: {fileID: 0}
+  fishingBarMoving: {fileID: 0}
+  fishingBarBar: {fileID: 0}
+  fishingBarGreen: {fileID: 0}
+  maxBarDist: 100
+  minBarDist: 15
+  avgBarSpeed: 500
+  uiBarDelay: 5
+  catchNothingDialog:
+  - name: Yellow Guy
+    sentences:
+    - oh man! I didn't catch anything!
+    - What should we do?
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
+  - name: Purple Guy
+    sentences:
+    - We should try somewhere else
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
+  missedCatchDialog:
+  - name: Yellow Guy
+    sentences:
+    - Awww! Missed!
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
+  - name: Purple Guy
+    sentences:
+    - Dude You Suck
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    characterColor: {r: 0.44705886, g: 0.21176472, b: 0.5176471, a: 1}
+  startFishGame: event:/StartBarGame
+  pressBarButton: event:/StopBarGame
+--- !u!114 &2323482916453304329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323482916453304332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf258ad953461542bfbecfa56a11138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleItems:
+  - {fileID: 8424677300169751001, guid: c5963a7acce43a542a030110a2c84af5, type: 3}
+  - {fileID: 595980397751785733, guid: 3e3bbe201516c4c4e923f0e1c6c6443f, type: 3}
+  - {fileID: 3828945408327472829, guid: 4365730b8323a8441930a7f8aaaa0bed, type: 3}
+  - {fileID: 5537595881422512911, guid: 0f19cdc339432a84ea99621cdcfb3fff, type: 3}
+  - {fileID: 6189990100115227216, guid: a6fdc719b0af49f49810639c434a1a69, type: 3}
+  - {fileID: 595980397751785733, guid: e2730306368564a2e92afc01fed2d8d8, type: 3}
+  - {fileID: 9089978963393697, guid: ee9ef77ce36a77d4da9f7648aee70d7a, type: 3}
+  collectedItems: []
+  randNumList: 
+  UICollImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemPickerPos: {fileID: 0}

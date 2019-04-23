@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300048, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 40889b254a11e447691772cae6cce972, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.93, y: 0.74999994}
+    oldSize: {x: 0.91, y: 0.72}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -106,21 +106,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.43409196, y: -0.15989022}
-      - {x: 0.43409196, y: 0.03144278}
-      - {x: 0.42283708, y: 0.13273673}
-      - {x: 0.40032732, y: 0.24528554}
-      - {x: 0.33279803, y: 0.3240697}
-      - {x: 0.27652362, y: 0.35783437}
-      - {x: -0.31998515, y: 0.35783437}
-      - {x: -0.4212791, y: 0.2790502}
-      - {x: -0.46629864, y: 0.15524648}
-      - {x: -0.46629864, y: -0.18239999}
-      - {x: -0.38751444, y: -0.32871345}
-      - {x: -0.2749656, y: -0.3624781}
-      - {x: 0.2202492, y: -0.3624781}
-      - {x: 0.3553078, y: -0.3062037}
-      - {x: 0.38907245, y: -0.24992928}
+    - - {x: 0.45499998, y: -0.21}
+      - {x: 0.45499998, y: 0.12}
+      - {x: 0.42499998, y: 0.24}
+      - {x: 0.39499998, y: 0.28}
+      - {x: 0.33499998, y: 0.34}
+      - {x: 0.13499999, y: 0.35}
+      - {x: 0.024999999, y: 0.35999998}
+      - {x: -0.225, y: 0.35999998}
+      - {x: -0.305, y: 0.35}
+      - {x: -0.345, y: 0.32}
+      - {x: -0.39499998, y: 0.28}
+      - {x: -0.42499998, y: 0.17}
+      - {x: -0.45499998, y: 0.04}
+      - {x: -0.45499998, y: -0.17}
+      - {x: -0.405, y: -0.29}
+      - {x: -0.355, y: -0.32999998}
+      - {x: -0.305, y: -0.34}
+      - {x: -0.235, y: -0.35999998}
+      - {x: 0.275, y: -0.35999998}
+      - {x: 0.325, y: -0.35}
+      - {x: 0.39499998, y: -0.29999998}
 --- !u!114 &7732253366917277192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,16 +141,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPickedPos: {fileID: 0}
   dialog:
-  - name: Yellow Guy
+  - name: Wendy
     sentences:
-    - oooohhhhhhhhhhhhh
-    - Do you like this?
-    - I think it would go well with the other stuff you have
-    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
-  - name: Purple Guy
-    sentences:
-    - What other stuff?
+    - "It\u2019s beautiful!"
     characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
+    dialogSound: event:/Dialog_Wendy
+  - name: Miko
+    sentences:
+    - "It\u2019s...A soggy marshmallow!"
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
+    sentences:
+    - "Thank you Miku, it\u2019s so squishy!"
+    - This will make the perfect foundation.
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Wendy
   isCollectable: 1

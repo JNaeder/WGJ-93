@@ -258,16 +258,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPickedPos: {fileID: 0}
   dialog:
-  - name: Yellow Guy
+  - name: Wendy
     sentences:
-    - A red circle!
-    - Do you like this?
-    - We could make it part of the house!
-    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
-  - name: Purple Guy
-    sentences:
-    - Sure! Let's do it
+    - A jellyfish!
     characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
+    dialogSound: event:/Dialog_Wendy
+  - name: Miko
+    sentences:
+    - "It\u2019s glowing!"
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
+    sentences:
+    - Squishy and resilient!
+    - The perfect protection from the elements.
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Wendy
   isCollectable: 1

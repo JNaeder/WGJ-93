@@ -13,9 +13,15 @@ public class DialogManager : MonoBehaviour
 
     public Text dialogTextBox;
     public Image dialogImage;
+    public GameObject arrowKeysControlUI, spacebarControlsUI;
 
     public int howManyTurns = 0;
     int indexNum = 0;
+
+
+    public bool isCutscene, isFirstDialog, isSecondDialog;
+    public int nextSceneToLoad;
+    LevelManager lM;
 
 
     // Start is called before the first frame update
@@ -23,14 +29,22 @@ public class DialogManager : MonoBehaviour
     {
         gM = FindObjectOfType<Fishing>();
         mainGuy = FindObjectOfType<CharacterMovement>();
+        lM = FindObjectOfType<LevelManager>();
 
         sentences = new Queue<string>();
+
+
+        if (arrowKeysControlUI != null)
+        {
+            arrowKeysControlUI.SetActive(false);
+            spacebarControlsUI.SetActive(false);
+        }
     }
 
 
     private void Update()
     {
-        if (!mainGuy.isMoveable)
+        if (!mainGuy.isMoveable || isCutscene)
         {
             if (Input.GetButtonDown("Submit"))
             {
@@ -50,7 +64,7 @@ public class DialogManager : MonoBehaviour
             currentDialog = dialog;
             sentences.Clear();
             dialogImage.sprite = dialog[indexNum].characterSprite;
-            //dialogImage.color = dialog[indexNum].characterColor;
+        dialog[indexNum].PlayDialogSound();
 
             foreach (string sentence in dialog[indexNum].sentences)
             {
@@ -66,7 +80,7 @@ public class DialogManager : MonoBehaviour
     public void StartNextTurn(Dialog[] dialog, int i) {
         sentences.Clear();
       dialogImage.sprite = dialog[indexNum].characterSprite;
-       //dialogImage.color = dialog[indexNum].characterColor;
+        dialog[indexNum].PlayDialogSound();
         foreach (string sentence in dialog[i].sentences)
         {
             sentences.Enqueue(sentence);
@@ -104,9 +118,27 @@ public class DialogManager : MonoBehaviour
 
 
     public void EndDialog() {
-       // Debug.Log("EndConvo");
-        gM.EndFishing();
+        // Debug.Log("EndConvo");
+        if (gM != null && !isFirstDialog && !isSecondDialog)
+        {
+            gM.EndFishing();
+        }
         indexNum = 0;
+        if (isCutscene) {
+            lM.LoadLevel(nextSceneToLoad);
+          } else if (isSecondDialog) {
+            mainGuy.isMoveable = true;
+            gM.dialogBarUI.SetActive(false);
+            arrowKeysControlUI.SetActive(false);
+            isFirstDialog = false;
+        }
+        else if (isFirstDialog) {
+            mainGuy.isMoveable = true;
+            gM.dialogBarUI.SetActive(false);
+            arrowKeysControlUI.SetActive(true);
+            isFirstDialog = false;
+            isSecondDialog = true;
+            }
     }
 
     

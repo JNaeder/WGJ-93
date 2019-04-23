@@ -136,20 +136,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPickedPos: {fileID: 0}
   dialog:
-  - name: Yellow Guy
+  - name: Miko
     sentences:
-    - Is this supposed to be a stop sign?
+    - This is a strange place for a gnome!
     characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
-  - name: Purple Guy
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
     sentences:
-    - Maybe it's rusted and dangerous.
-    - Let's use it anyway.
+    - "Oh what adventures he\u2019s been on!"
     characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
-  - name: Yellow Guy
+    dialogSound: event:/Dialog_Wendy
+  - name: Miko
     sentences:
-    - Great Idea!
+    - Can you use him?
     characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
+    sentences:
+    - The perfect guard for my new house.
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Wendy
   isCollectable: 1

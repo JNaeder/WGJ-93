@@ -157,16 +157,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPickedPos: {fileID: 0}
   dialog:
-  - name: Yellow Guy
+  - name: Miko
     sentences:
-    - This is just a stupid box!
-    - What can we do with this?
+    - I caught a Boot!
     characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
-  - name: Purple Guy
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
     sentences:
-    - We should just throw it back
-    - I can't use that
+    - How aboot that?
     characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
-  isCollectable: 0
+    dialogSound: event:/Dialog_Wendy
+  - name: Miko
+    sentences:
+    - '...'
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
+    sentences:
+    - Well ventilated for the perfect kitchen extension.
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Wendy
+  isCollectable: 1

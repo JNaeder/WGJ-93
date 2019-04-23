@@ -33,7 +33,7 @@ public class Fishing : MonoBehaviour
 
 
     [FMODUnity.EventRef]
-    public string startFishGame, pressBarButton;
+    public string startFishGame, pressBarButton, fishGameMovingSound;
 
     bool hasPlayedFishGameSound = false;
 
@@ -42,6 +42,7 @@ public class Fishing : MonoBehaviour
     Fishing gM;
     Collectables collGM;
     DialogManager DM;
+    LevelManager lM;
 
 
     // Start is called before the first frame update
@@ -49,15 +50,22 @@ public class Fishing : MonoBehaviour
     {
 
 
-        SetUpFishingBar(fishingBarSpeed, greenBarAreaSize);
-        fishigUIBar.SetActive(false);
+        //SetUpFishingBar(fishingBarSpeed, greenBarAreaSize);
+        if (fishigUIBar != null)
+        {
+            fishigUIBar.SetActive(false);
+        }
 
         mainGuy = FindObjectOfType<CharacterMovement>();
         gM = FindObjectOfType<Fishing>();
         collGM = FindObjectOfType<Collectables>();
         DM = FindObjectOfType<DialogManager>();
+        lM = FindObjectOfType<LevelManager>();
 
-        dialogBarUI.SetActive(false);
+        if (dialogBarUI != null)
+        {
+            dialogBarUI.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -122,24 +130,24 @@ public class Fishing : MonoBehaviour
         if (distAway < 0.5f)
         {
             //Slow
-            float randomSpeed = Random.Range(avgBarSpeed * 0.6f, avgBarSpeed * 0.8f);
+            float randomSpeed = Random.Range(avgBarSpeed * 0.8f, avgBarSpeed * 0.9f);
             float randomGreenSize = Random.Range(minBarDist, maxBarDist + (maxBarDist * 0.6f));
             SetUpFishingBar(randomSpeed, randomGreenSize);
         }
         else if (distAway > 0.5f && distAway < 1.5f)
         {
             // med
-            float randomSpeed = Random.Range(avgBarSpeed *0.8f, avgBarSpeed);
+            float randomSpeed = Random.Range(avgBarSpeed *0.9f, avgBarSpeed);
             float randomGreenSize = Random.Range(maxBarDist + (maxBarDist * 0.6f), maxBarDist - (maxBarDist * 0.4f));
             SetUpFishingBar(randomSpeed, randomGreenSize);
         }
-        else if (distAway > 1.5f && distAway < 3f) {
+        else if (distAway > 1.5f && distAway < 2f) {
             //med fast
             float randomSpeed = Random.Range(avgBarSpeed, avgBarSpeed * 1.2f);
             float randomGreenSize = Random.Range(maxBarDist - (maxBarDist * 0.6f), maxBarDist - (maxBarDist * 0.4f));
             SetUpFishingBar(randomSpeed, randomGreenSize);
         }
-        else if (distAway > 3f)
+        else if (distAway > 2f)
         {
             //fast
             float randomSpeed = Random.Range(avgBarSpeed * 1.2f, avgBarSpeed * 1.4f);
@@ -171,10 +179,12 @@ public class Fishing : MonoBehaviour
         hasPlayedFishGameSound = false;
         isFishing = false;
 
-       // yield return new WaitForSeconds(3);
-        fishigUIBar.SetActive(false);
-        mainGuy.isMoveable = true;
-        dialogBarUI.SetActive(false);
+        if (fishigUIBar != null)
+        {
+            fishigUIBar.SetActive(false);
+            mainGuy.isMoveable = true;
+            dialogBarUI.SetActive(false);
+        }
         if (mainGuy.currentUWItem != null) {
             collGM.TurnOffItem();
             mainGuy.currentUWItem.TurnOffTrigger();
@@ -182,9 +192,12 @@ public class Fishing : MonoBehaviour
         }
 
         //WIN!!!
-        if (collGM.collectedItems.Count == 6) {
-            dialogBarUI.SetActive(true);
-            dialogText.text = "You Win!";
+        if (collGM.collectedItems.Count == collGM.UICollImage.Length) {
+            //dialogBarUI.SetActive(true);
+            //dialogText.text = "You Win!";
+            lM.LoadLevel(4);
+
+
         }
         
 
@@ -210,14 +223,16 @@ public class Fishing : MonoBehaviour
             if (fishingBarMoving.anchoredPosition.x > ((UIBarSize) - (movingBarSize)))
             {
                 isBarMovingRight = false;
+                FMODUnity.RuntimeManager.PlayOneShot(fishGameMovingSound);
 
 
-            }
+        }
             else if (fishingBarMoving.anchoredPosition.x < (-(UIBarSize) + (movingBarSize)))
             {
 
                 isBarMovingRight = true;
-            }
+            FMODUnity.RuntimeManager.PlayOneShot(fishGameMovingSound);
+        }
         
 
     }

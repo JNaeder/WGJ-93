@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:\Users\John\Google Drive\Game Stuff\WGJ 93 Fishing\FMOD\WGJ93_FMOD\WGJ93_FMOD.fspro
-  SourceProjectPathUnformatted: C:\Users\John\Google Drive\Game Stuff\WGJ 93 Fishing\FMOD\WGJ93_FMOD\WGJ93_FMOD.fspro
-  SourceBankPathUnformatted: C:\Users\John\Google Drive\Game Stuff\WGJ 93 Fishing\FMOD\WGJ93_FMOD\Build
+  sourceProjectPath: /Users/John/Google Drive/Game Stuff/WGJ 93 Fishing/FMOD/WGJ93_FMOD/WGJ93_FMOD.fspro
+  SourceProjectPathUnformatted: /Users/John/Google Drive/Game Stuff/WGJ 93 Fishing/FMOD/WGJ93_FMOD/WGJ93_FMOD.fspro
+  SourceBankPathUnformatted: /Users/John/Google Drive/Game Stuff/WGJ 93 Fishing/FMOD/WGJ93_FMOD/Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     Value: 3
   SampleRateSettings:
   - Platform: 1
-    Value: 48000
+    Value: 44100
   - Platform: 2
     Value: 0
   LiveUpdateSettings:
@@ -37,7 +37,7 @@ MonoBehaviour:
     Value: 0
   OverlaySettings:
   - Platform: 1
-    Value: 1
+    Value: 0
   - Platform: 2
     Value: 0
   LoggingSettings:

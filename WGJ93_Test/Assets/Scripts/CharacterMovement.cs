@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
 
     Animator anim;
     Fishing gM;
+    DialogManager dM;
 
     public UnderWaterItem currentUWItem;
     float distanceFromItem;
@@ -29,6 +30,10 @@ public class CharacterMovement : MonoBehaviour
 
     FMOD.Studio.EventInstance boatMovingInst, sensorLightInst;
 
+    public Dialog[] startFishingDialog;
+
+    bool hasTriggeredDialog;
+
 
 
     // Start is called before the first frame update
@@ -36,6 +41,7 @@ public class CharacterMovement : MonoBehaviour
     {
         gM = FindObjectOfType<Fishing>();
         anim = GetComponent<Animator>();
+        dM = FindObjectOfType<DialogManager>();
 
         fishingLineScale = fishingLine.localScale;
         fishingLineScale.y = 0;
@@ -80,14 +86,17 @@ public class CharacterMovement : MonoBehaviour
             anim.SetFloat("h", h);
             boatMovingInst.setParameterValue("h", Mathf.Abs(h));
 
-            if (lastFrameSpeed == 0) {
-                if (Mathf.Abs(h) != 0) {
+            if (lastFrameSpeed != 1) {
+                if (Mathf.Abs(h) == 1) {
                     FMODUnity.RuntimeManager.PlayOneShot(boatChange);
                 }
 
             }
 
-            lastFrameSpeed = h;
+            lastFrameSpeed = Mathf.Abs(h);
+        } else {
+            boatMovingInst.setParameterValue("h", 0);
+
         }
     }
 
@@ -95,25 +104,41 @@ public class CharacterMovement : MonoBehaviour
     void ThrowFishingRod() {
 
         // Debug.Log("Throw Fishing Rod");
-        if (currentUWItem != null)
+
+        if (isMoveable)
         {
-            //Debug.Log("StartFishing at " + currentUWItem.distanceFromPlayer + " feet");
-            gM.StartFishing(distanceFromItem);
-        }
-        else {
-            gM.FakeFishing();
-            //Debug.Log("Fake fishing!");
 
-        }
+            if (dM.isSecondDialog) {
+                dM.arrowKeysControlUI.SetActive(false);
+                dM.spacebarControlsUI.SetActive(false);
+                dM.isSecondDialog = false;
+              }
 
-        
-        isMoveable = false;
-        FMODUnity.RuntimeManager.PlayOneShot(dropLine);
+            if (currentUWItem != null)
+            {
+                //Debug.Log("StartFishing at " + currentUWItem.distanceFromPlayer + " feet");
+                gM.StartFishing(distanceFromItem);
+            }
+            else
+            {
+                gM.FakeFishing();
+                //Debug.Log("Fake fishing!");
+
+            }
+
+
+
+            isMoveable = false;
+            FMODUnity.RuntimeManager.PlayOneShot(dropLine);
+        }
 
     }
 
     void UpdateAnim() {
-        guyAnim.SetBool("isFishing", gM.isFishing);
+        if (guyAnim != null)
+        {
+            guyAnim.SetBool("isFishing", gM.isFishing);
+        }
     }
 
     void SetSensorColor() {
@@ -131,6 +156,16 @@ public class CharacterMovement : MonoBehaviour
             else {
                 sensorLightInst.setParameterValue("dist", 10);
             }
+
+
+            if(distanceFromItem < 1.5f && dM.isSecondDialog && !hasTriggeredDialog) {
+                dM.StartDialog(startFishingDialog, startFishingDialog.Length);
+                isMoveable = false;
+                gM.dialogBarUI.SetActive(true);
+                dM.arrowKeysControlUI.SetActive(false);
+                dM.spacebarControlsUI.SetActive(true);
+                hasTriggeredDialog = true;
+               }
         }
         else {
             sensorSP.color = sensorStartColor;

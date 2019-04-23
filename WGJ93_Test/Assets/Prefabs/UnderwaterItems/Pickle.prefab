@@ -139,19 +139,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPickedPos: {fileID: 0}
   dialog:
-  - name: Yellow Guy
+  - name: Miko
     sentences:
-    - What does this remind me of?
+    - A sea pickle!
     characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
-  - name: Purple Guy
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
     sentences:
-    - idk, but whatever it is it looks ugly
+    - Oh wow, how rare!
     characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
-  - name: Yellow Guy
+    dialogSound: event:/Dialog_Wendy
+  - name: Miko
     sentences:
-    - Agreed
+    - "I bet it\u2019s magic."
     characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
+    dialogSound: event:/Dialog_Miku
+  - name: Wendy
+    sentences:
+    - This perfect pickle will preserve my pretty precious palace.
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
+    dialogSound: event:/Dialog_Wendy
   isCollectable: 1
