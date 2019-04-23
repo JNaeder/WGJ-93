@@ -25,7 +25,7 @@ public class ItemScript : MonoBehaviour
     }
 
     public void TriggerDialog() {
-        FindObjectOfType<DialogManager>().StartDialog(dialog,dialog.Length);
-
+        FindObjectOfType<DialogManager>().StartDialog(dialog, dialog.Length);
     }
+    
 }

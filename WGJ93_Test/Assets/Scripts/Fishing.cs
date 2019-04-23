@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class Fishing : MonoBehaviour
 {
+
+
 
     public bool isFishing, isDrivingBoat;
     public float fishingBarSpeed;
@@ -13,6 +16,8 @@ public class Fishing : MonoBehaviour
     public GameObject fishigUIBar, dialogBarUI;
     public Text dialogText;
     public RectTransform fishingBarMoving, fishingBarBar, fishingBarGreen;
+
+    public float maxBarDist, minBarDist, avgBarSpeed;
 
     bool isBarMovingRight = true;
     bool movingPieceIsMoving;
@@ -25,6 +30,12 @@ public class Fishing : MonoBehaviour
 
     public Dialog[] catchNothingDialog;
     public Dialog[] missedCatchDialog;
+
+
+    [FMODUnity.EventRef]
+    public string startFishGame, pressBarButton;
+
+    bool hasPlayedFishGameSound = false;
 
 
     CharacterMovement mainGuy;
@@ -57,12 +68,21 @@ public class Fishing : MonoBehaviour
 
             if (Time.time > pressedTime + uiBarDelay)
             {
+                if (!hasPlayedFishGameSound) {
+                    hasPlayedFishGameSound = true;
+                    FMODUnity.RuntimeManager.PlayOneShot(startFishGame);
+
+                }
                 fishigUIBar.SetActive(true);
+                
                 //Debug.Log("Green size: " + greenAreaSize + " UIbarsize: " + UIBarSize);
+
+
 
                 MoveMovingPiece();
                 if (Input.GetButtonDown("Jump") && Time.time > (pressedTime + 0.5f))
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(pressBarButton);
                     //Debug.Log(fishingBarMoving.anchoredPosition);
                     // work on this line for mini game
                     if (fishingBarMoving.anchoredPosition.x > (-greenAreaSize - movingBarSize) && fishingBarMoving.anchoredPosition.x < (greenAreaSize + movingBarSize))
@@ -80,6 +100,7 @@ public class Fishing : MonoBehaviour
                         isFishing = false;
                         DM.StartDialog(missedCatchDialog, missedCatchDialog.Length);
                     }
+                    
 
                 }
 
@@ -91,7 +112,9 @@ public class Fishing : MonoBehaviour
 
     }
 
+
     public void StartFishing(float distAway) {
+        
         isFishing = true;
         pressedTime = Time.time;
         uiBarDelay = Random.Range(1.0f, 7.0f);
@@ -99,28 +122,28 @@ public class Fishing : MonoBehaviour
         if (distAway < 0.5f)
         {
             //Slow
-            float randomSpeed = Random.Range(550, 650);
-            float randomGreenSize = Random.Range(75, 200);
+            float randomSpeed = Random.Range(avgBarSpeed * 0.6f, avgBarSpeed * 0.8f);
+            float randomGreenSize = Random.Range(minBarDist, maxBarDist + (maxBarDist * 0.6f));
             SetUpFishingBar(randomSpeed, randomGreenSize);
         }
         else if (distAway > 0.5f && distAway < 1.5f)
         {
             // med
-            float randomSpeed = Random.Range(600, 800);
-            float randomGreenSize = Random.Range(100, 150);
+            float randomSpeed = Random.Range(avgBarSpeed *0.8f, avgBarSpeed);
+            float randomGreenSize = Random.Range(maxBarDist + (maxBarDist * 0.6f), maxBarDist - (maxBarDist * 0.4f));
             SetUpFishingBar(randomSpeed, randomGreenSize);
         }
         else if (distAway > 1.5f && distAway < 3f) {
             //med fast
-            float randomSpeed = Random.Range(800, 1000);
-            float randomGreenSize = Random.Range(75, 200);
+            float randomSpeed = Random.Range(avgBarSpeed, avgBarSpeed * 1.2f);
+            float randomGreenSize = Random.Range(maxBarDist - (maxBarDist * 0.6f), maxBarDist - (maxBarDist * 0.4f));
             SetUpFishingBar(randomSpeed, randomGreenSize);
         }
         else if (distAway > 3f)
         {
             //fast
-            float randomSpeed = Random.Range(900, 1200);
-            float randomGreenSize = Random.Range(100, 150);
+            float randomSpeed = Random.Range(avgBarSpeed * 1.2f, avgBarSpeed * 1.4f);
+            float randomGreenSize = Random.Range(maxBarDist - (maxBarDist * 0.4f), maxBarDist);
             SetUpFishingBar(randomSpeed, randomGreenSize);
         }
 
@@ -145,7 +168,9 @@ public class Fishing : MonoBehaviour
     }
 
    public void EndFishing() {
+        hasPlayedFishGameSound = false;
         isFishing = false;
+
        // yield return new WaitForSeconds(3);
         fishigUIBar.SetActive(false);
         mainGuy.isMoveable = true;
@@ -203,7 +228,7 @@ public class Fishing : MonoBehaviour
         greenAreaSize = fishingBarGreen.rect.width / 2;
         movingBarSize = fishingBarMoving.rect.width / 2;
         UIBarSize = fishingBarBar.rect.width / 2;
-
+        
 
     }
 }

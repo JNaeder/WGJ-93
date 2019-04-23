@@ -44,26 +44,29 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog[] dialog, int turnNum) {
         //Debug.Log("Starting Convo with " + dialog.name);
-        howManyTurns = turnNum;
-        indexNum = 0;
-        currentDialog = dialog;
-        sentences.Clear();
-        dialogImage.sprite = dialog[indexNum].characterSprite;
-        dialogImage.color = dialog[indexNum].characterColor;
         
-        foreach (string sentence in dialog[indexNum].sentences) {
-            sentences.Enqueue(sentence);
+            howManyTurns = turnNum;
+            indexNum = 0;
+            currentDialog = dialog;
+            sentences.Clear();
+            dialogImage.sprite = dialog[indexNum].characterSprite;
+            //dialogImage.color = dialog[indexNum].characterColor;
 
-        }
+            foreach (string sentence in dialog[indexNum].sentences)
+            {
+                sentences.Enqueue(sentence);
 
-        DisplayNextSentence();
+            }
+
+            DisplayNextSentence();
+            
     }
 
 
     public void StartNextTurn(Dialog[] dialog, int i) {
         sentences.Clear();
-       dialogImage.sprite = dialog[indexNum].characterSprite;
-       dialogImage.color = dialog[indexNum].characterColor;
+      dialogImage.sprite = dialog[indexNum].characterSprite;
+       //dialogImage.color = dialog[indexNum].characterColor;
         foreach (string sentence in dialog[i].sentences)
         {
             sentences.Enqueue(sentence);

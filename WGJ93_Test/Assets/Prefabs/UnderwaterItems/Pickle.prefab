@@ -142,16 +142,16 @@ MonoBehaviour:
   - name: Yellow Guy
     sentences:
     - What does this remind me of?
-    characterSprite: {fileID: 21300000, guid: a0d731c39e5cce749a3f60cbfcb93a6a, type: 3}
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
     characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
   - name: Purple Guy
     sentences:
     - idk, but whatever it is it looks ugly
-    characterSprite: {fileID: 21300000, guid: a0d731c39e5cce749a3f60cbfcb93a6a, type: 3}
+    characterSprite: {fileID: 21300054, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
     characterColor: {r: 0.44705886, g: 0.20784315, b: 0.5176471, a: 1}
   - name: Yellow Guy
     sentences:
     - Agreed
-    characterSprite: {fileID: 21300000, guid: a0d731c39e5cce749a3f60cbfcb93a6a, type: 3}
+    characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
     characterColor: {r: 0.98823535, g: 1, b: 0.44705886, a: 1}
   isCollectable: 1
