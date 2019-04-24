@@ -792,7 +792,7 @@ MonoBehaviour:
   isCutscene: 1
   isFirstDialog: 0
   isSecondDialog: 0
-  nextSceneToLoad: 6
+  nextSceneToLoad: 7
 --- !u!114 &1371022567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,7 +811,7 @@ MonoBehaviour:
     - You really found a use for everything.
     - A Pickled marshmallow jellyfish book boot gnome puzzle house!
     characterSprite: {fileID: 21300052, guid: 3a30a847768bb4903ad28c0ccd4712c7, type: 3}
-    dialogSound: event:/TestMikuVoice
+    dialogSound: event:/Dialog_Miku
   - name: Wendy
     sentences:
     - Thank you for helping me rebuild my house Miku

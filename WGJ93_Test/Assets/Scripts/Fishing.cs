@@ -195,7 +195,7 @@ public class Fishing : MonoBehaviour
         if (collGM.collectedItems.Count == collGM.UICollImage.Length) {
             //dialogBarUI.SetActive(true);
             //dialogText.text = "You Win!";
-            lM.LoadLevel(4);
+            lM.LoadLevel(5);
 
 
         }

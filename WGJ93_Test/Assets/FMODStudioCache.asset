@@ -15,6 +15,8 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 114420500962279468}
   - {fileID: 114894257744253570}
+  - {fileID: 114073241940070966}
+  - {fileID: 114361565360669172}
   EditorEvents:
   - {fileID: 114548068925182358}
   - {fileID: 114882662408631630}
@@ -34,7 +36,7 @@ MonoBehaviour:
   - {fileID: 114894257744253570}
   StringsBanks:
   - {fileID: 114420500962279468}
-  stringsBankWriteTime: 636916405900000000
+  stringsBankWriteTime: 636917012650000000
   cacheVersion: 3
 --- !u!114 &114001572106015334
 MonoBehaviour:
@@ -178,6 +180,26 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114073241940070966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/John/Google Drive/Game Stuff/WGJ 93 Fishing/FMOD/WGJ93_FMOD/Build/Desktop/Master
+    Bank.streams.bank
+  lastModified: 636917012650000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1786912
+  Exists: 1
 --- !u!114 &114107126433972238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +564,26 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114361565360669172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/John/Google Drive/Game Stuff/WGJ 93 Fishing/FMOD/WGJ93_FMOD/Build/Desktop/Master
+    Bank.assets.bank
+  lastModified: 636917012650000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 313696
+  Exists: 1
 --- !u!114 &114397892139673296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,11 +652,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: /Users/John/Google Drive/Game Stuff/WGJ 93 Fishing/FMOD/WGJ93_FMOD/Build/Desktop/Master
     Bank.strings.bank
-  lastModified: 636916405900000000
+  lastModified: 636917012650000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1334
+    Value: 1430
   Exists: 1
 --- !u!114 &114425575079411178
 MonoBehaviour:
@@ -698,11 +740,11 @@ MonoBehaviour:
   guid: e65509ba7677254ab5d08436c61b2044
   Banks:
   - {fileID: 114894257744253570}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114660033094985568}
+  - {fileID: 114547674715198806}
   MinDistance: 0
   MaxDistance: 0
   Length: 6000
@@ -816,6 +858,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114547674715198806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: h
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114548068925182358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,7 +890,7 @@ MonoBehaviour:
   guid: 61e4e68ed9def84a887389391f27c7a9
   Banks:
   - {fileID: 114894257744253570}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -981,7 +1039,7 @@ MonoBehaviour:
   guid: e12d0d3b59fcbd43a2ca4c07660028ee
   Banks:
   - {fileID: 114894257744253570}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -1251,7 +1309,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114146252343984988}
+  - {fileID: 114904779604382734}
   MinDistance: 0
   MaxDistance: 0
   Length: 5000
@@ -1285,11 +1343,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: /Users/John/Google Drive/Game Stuff/WGJ 93 Fishing/FMOD/WGJ93_FMOD/Build/Desktop/Master
     Bank.bank
-  lastModified: 636916405900000000
+  lastModified: 636917012650000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2130656
+    Value: 31002
   Exists: 1
 --- !u!114 &114898856956103798
 MonoBehaviour:
@@ -1306,6 +1364,22 @@ MonoBehaviour:
   Name: h
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &114904779604382734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: dist
+  Min: 0
+  Max: 10
   Default: 0
 --- !u!114 &114920150617666970
 MonoBehaviour:

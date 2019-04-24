@@ -7,7 +7,7 @@
 [WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x11d690608 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x110016008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,4 +20,38 @@
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {a49ef940-5e46-4c8b-912b-d261178a3bcd}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {0be85366-b4c1-42e0-83b9-5a0285c8ba03}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {370c7b2a-1e02-47a0-8afa-2f8b522a2e78}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {549ad1ee-e37f-4b11-9a2e-340884e8e117}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {41b75427-121e-4859-94c9-5b54a9cf3a4b}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {7b6a1f3c-7e10-45ec-be70-ca38c1db1049}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {29d400d9-6439-4a85-834e-bcdfc2eb1e3a}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {9bbbd668-6439-4d5d-ab77-1c1f6069f9dc}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {6c16860f-2c26-4c00-8c49-3a902a654418}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {afe886ed-51a7-474e-9fd8-83e5de0fc59c}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {cf62be77-7002-440f-b569-2ac120985cf7}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {655485bc-9e6e-4012-874c-580edeb0ed87}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {7db338be-0e75-4e7e-8cca-10143156a41c}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {c56f1dde-c0c4-4590-b31a-29b33f1bc8d5}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {6027b3b0-9ba2-4274-ac6c-6618c1a71c3f}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {7f520b52-bc84-4960-9d7f-ac1f8bb90866}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {11566c77-adf1-4ed3-a6bc-1686bf80530e}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {e85da35f-51db-432e-97b5-8f4af64a7e82}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {342bec76-f618-40d2-9b30-0ef13b42649d}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {b8bf08b6-e886-4ee7-82cd-1a38d38f1fb8}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {0453d469-7d30-49fe-9efc-afb2b43d6d70}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {104a93bc-623a-4bfe-98d4-f68a30809031}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {6027b3b0-9ba2-4274-ac6c-6618c1a71c3f}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {7f520b52-bc84-4960-9d7f-ac1f8bb90866}
+[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {82676f4f-9c9d-48cf-a2df-e24c3db29305}
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
