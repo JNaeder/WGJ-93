@@ -53,7 +53,7 @@ public class Collectables : MonoBehaviour
     public GameObject GetRandomItem() {
         int randNum = Random.Range(0, possibleItems.Length);
         for(int i = 0; i < randNumList.Count; i++) {
-            if (randNum == randNumList[i] && randNumList.Count != 6) {
+            if (randNum == randNumList[i] && randNumList.Count != possibleItems.Length) {
                // Debug.Log("repeat!");
                 GetRandomItem();
                 return null;
@@ -75,6 +75,7 @@ public class Collectables : MonoBehaviour
         //gM.dialogText.text = newItemScript.collectedMessage;
         newItemScript.TriggerDialog();
 
+        Debug.Log(newItem + " randNum is " + randNum);
         return newItem;
     }
 

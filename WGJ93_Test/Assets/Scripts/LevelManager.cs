@@ -11,6 +11,9 @@ public class LevelManager : MonoBehaviour
 
     public GameObject startMenu, creditsMenu;
     public GameObject creditMenuFirstButton, startMenuFirstButton;
+    public Animator transAnim;
+
+    int lvlIndex;
 
 
     [FMODUnity.EventRef]
@@ -24,8 +27,14 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadLevel(int lvlNum) {
-        SceneManager.LoadScene(lvlNum);
+        lvlIndex = lvlNum;
+        transAnim.SetTrigger("FadeOut");
         Time.timeScale = 1;
+    }
+
+    public void OnFadeCompleteLoadLevel() {
+        SceneManager.LoadScene(lvlIndex);
+
     }
 
     public void QuitGame() {

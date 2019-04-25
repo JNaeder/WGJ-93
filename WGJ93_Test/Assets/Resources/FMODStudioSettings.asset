@@ -61,4 +61,6 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master Bank
-  Banks: []
+  Banks:
+  - Master Bank.streams
+  - Master Bank.assets

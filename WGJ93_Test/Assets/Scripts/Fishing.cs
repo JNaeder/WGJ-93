@@ -28,12 +28,21 @@ public class Fishing : MonoBehaviour
 
     public float uiBarDelay = 5f;
 
-    public Dialog[] catchNothingDialog;
-    public Dialog[] missedCatchDialog;
+    public Dialog[] catchNothingDialog1;
+    public Dialog[] catchNothingDialog2;
+    public Dialog[] catchNothingDialog3;
+
+
+
+    public Dialog[] missedCatchDialog1;
+    public Dialog[] missedCatchDialog2;
+    public Dialog[] missedCatchDialog3;
+    public Dialog[] missedCatchDialog4;
+    public Dialog[] missedCatchDialog5;
 
 
     [FMODUnity.EventRef]
-    public string startFishGame, pressBarButton, fishGameMovingSound;
+    public string startFishGame, pressBarButton, fishGameMovingSound, winFishingGame, loseFishingGame;
 
     bool hasPlayedFishGameSound = false;
 
@@ -96,6 +105,7 @@ public class Fishing : MonoBehaviour
                     if (fishingBarMoving.anchoredPosition.x > (-greenAreaSize - movingBarSize) && fishingBarMoving.anchoredPosition.x < (greenAreaSize + movingBarSize))
                     {
                         dialogBarUI.SetActive(true);
+                        FMODUnity.RuntimeManager.PlayOneShot(winFishingGame);
                         mainGuy.currentUWItem.GetItem();
                         isFishing = false;
                         // StartCoroutine(EndFishing());
@@ -106,7 +116,10 @@ public class Fishing : MonoBehaviour
                         dialogBarUI.SetActive(true);
                         //StartCoroutine(EndFishing());
                         isFishing = false;
-                        DM.StartDialog(missedCatchDialog, missedCatchDialog.Length);
+
+
+                        ChooseRandomMissedDialog();
+                        FMODUnity.RuntimeManager.PlayOneShot(loseFishingGame);
                     }
                     
 
@@ -119,6 +132,51 @@ public class Fishing : MonoBehaviour
 
 
     }
+
+    void ChooseRandomMissedDialog() {
+        int randNum = Random.Range(0,4);
+        if(randNum == 0) {
+            DM.StartDialog(missedCatchDialog1, 1);
+        } else if(randNum == 1) {
+            DM.StartDialog(missedCatchDialog2, 1);
+        }
+        else if (randNum == 2)
+        {
+            DM.StartDialog(missedCatchDialog3, 1);
+        }
+        else if (randNum == 3)
+        {
+            DM.StartDialog(missedCatchDialog4, 1);
+        }
+        else if (randNum == 4)
+        {
+            DM.StartDialog(missedCatchDialog5, 1);
+        }
+
+
+
+
+    }
+
+
+    void ChooseRandomCatchNothingDialog() {
+        int randNum = Random.Range(0, 2);
+        if (randNum == 0)
+        {
+            DM.StartDialog(catchNothingDialog1, 1);
+        }
+        else if (randNum == 1)
+        {
+            DM.StartDialog(catchNothingDialog2, 1);
+        }
+        else if (randNum == 2)
+        {
+            DM.StartDialog(catchNothingDialog3, 1);
+        }
+
+
+    }
+
 
 
     public void StartFishing(float distAway) {
@@ -171,7 +229,7 @@ public class Fishing : MonoBehaviour
         isFishing = false;
        //Debug.Log("Fake fishing!");
         dialogBarUI.SetActive(true);
-        DM.StartDialog(catchNothingDialog, catchNothingDialog.Length);
+        ChooseRandomCatchNothingDialog();
         //EndFishing();
     }
 
